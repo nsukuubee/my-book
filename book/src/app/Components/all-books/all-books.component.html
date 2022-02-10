@@ -1,0 +1,28 @@
+<div class="container">
+
+  
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Title:</th>
+            <th scope="col">Author:</th>
+            <th scope="col">Description:</th>
+            <th scope="col">image:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of Books; let i = index">
+            <th scope="row">{{book._id}}</th>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.description}}</td>
+            <td>{{book.image}}</td>
+            <td class="text-center">
+              <button class="btn btn-sm btn-primary" routerLink="/edit-book/{{book._id}}">Edit</button>
+              <button class="btn btn-sm btn-danger" (click)="delete(book._id, i)">Delete</button>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
